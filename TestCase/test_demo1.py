@@ -197,3 +197,17 @@ class TestUI:
         driver.get_screenshot_as_file("d:\\1.png")
         time.sleep(3)
         self.quit(driver)
+
+
+
+
+        try:
+            driver.find_elements_by_xpath("//span[contains(text(),'残忍拒绝')]").click()
+        except:
+            pass
+        time.sleep(2)
+        driver.find_elements_by_xpath("//span[contains(text(),'登录')][1]").click()
+        time.sleep(1)
+        assert '首页'in driver.page_source
+        pass
+
